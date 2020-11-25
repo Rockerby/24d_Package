@@ -19,7 +19,7 @@
         vm.userName = '';
         vm.contentNode = {};
         vm.numberOfProperties = 0;
-
+        vm.viewIframe = viewIframe;
 
         contentResource.getById(vm.CurrentNodeId).then(function (node) {
             vm.contentNode = node;
@@ -45,6 +45,10 @@
         userService.getCurrentUser().then(function (user) {
             vm.userName = user.name;
         });
+
+        function viewIframe() {
+            window.open(vm.iframeSrc);
+        };
     }
 
     angular.module('umbraco')

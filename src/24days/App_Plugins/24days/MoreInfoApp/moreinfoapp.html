@@ -1,21 +1,32 @@
 ﻿<div ng-controller="moreInfoAppController as vm">
-    <div ng-if="vm.loading">Loading...</div>
-    <div ng-if="!vm.loading" class="mia_container">
-        <h2>Live Content Preview</h2>
-        <a href="{{ vm.iframeSrc }}" target="_blank" class="mia_button">View in browser</a>
-        <div class="mia_content">
+
+    <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+
+    <umb-box ng-if="!vm.loading">
+        <umb-box-header title="Live Content Preview">
+            <umb-button action="vm.viewIframe()"
+                        label="View in browser"
+                        type="button"
+                        button-style="info">
+            </umb-button>
+        </umb-box-header>
+        <umb-box-content>
             <p>Don't forget to save your changes to see them in the preview window.</p>
             <iframe src="{{ vm.iframeSrc }}" class="mia_iframe"></iframe>
-        </div>
-        <h2>Maybe some more pieces</h2>
-        <div class="mia_content">
+        </umb-box-content>
+    </umb-box>
+    <umb-box ng-if="!vm.loading">
+        <umb-box-header title="Maybe some more pieces"
+                        description="Something more meaningful could go here">
+        </umb-box-header>
+        <umb-box-content class="flex justify-between">
             <p>Current user: {{ vm.userName }}</p>
             <p>Last person to edit: {{ vm.contentNode.updater.name }}</p>
-            
+             
             <p>Content Name: {{ vm.contentNode.variants[0].name }}</p>
             <p>Content Type: {{ vm.contentNode.contentTypeName }} [{{ vm.contentNode.contentTypeAlias }}]</p>
             <p>Number of properties: {{ vm.numberOfProperties }}</p>
-        </div>
-    </div>
+        </umb-box-content>
+    </umb-box>
 
 </div>
