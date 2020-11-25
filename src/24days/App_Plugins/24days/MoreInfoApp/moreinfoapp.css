@@ -1,0 +1,21 @@
+﻿.mia_container {
+
+}
+
+.mia_content {
+
+}
+
+.mia_iframe {
+    width:94%;
+    margin-left:3%;
+    height:500px;
+}
+.mia_button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1b264f;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}

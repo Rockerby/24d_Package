@@ -1,0 +1,20 @@
+﻿<div ng-controller="moreInfoAppController as vm">
+    <div ng-if="vm.loading">Loading...</div>
+    <div ng-if="!vm.loading" class="mia_container">
+        <h2>Live Content Preview</h2>
+        <a href="{{ vm.iframeSrc }}" target="_blank" class="mia_button">View in browser</a>
+        <div class="mia_content">
+            <iframe src="{{ vm.iframeSrc }}" class="mia_iframe"></iframe>
+        </div>
+        <h2>Maybe some more pieces</h2>
+        <div class="mia_content">
+            <p>Current user: {{ vm.userName }}</p>
+            <p>Last person to edit: {{ vm.contentNode.updater.name }}</p>
+            
+            <p>Content Name: {{ vm.contentNode.variants[0].name }}</p>
+            <p>Content Type: {{ vm.contentNode.contentTypeName }} [{{ vm.contentNode.contentTypeAlias }}]</p>
+            <p>Number of properties: {{ vm.numberOfProperties }}</p>
+        </div>
+    </div>
+
+</div>

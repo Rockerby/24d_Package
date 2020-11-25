@@ -1,0 +1,16 @@
+{
+  "contentApps": [
+    {
+      "name": "More Info App",
+      "alias": "moreInfoApp",
+      "icon": "icon-window-sizes color-blue-grey",
+      "view": "~/App_Plugins/24days/MoreInfoApp/moreinfoapp.html"
+    }
+  ],
+  "javascript": [
+    "~/App_Plugins/24days/MoreInfoApp/moreinfoapp.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/24days/MoreInfoApp/moreinfoapp.css"
+  ]
+}
